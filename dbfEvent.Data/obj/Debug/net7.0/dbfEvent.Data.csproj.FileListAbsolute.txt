@@ -1,0 +1,14 @@
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/bin/Debug/net7.0/dbfEvent.Data.deps.json
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/bin/Debug/net7.0/dbfEvent.Data.runtimeconfig.json
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/bin/Debug/net7.0/dbfEvent.Data.dll
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/bin/Debug/net7.0/dbfEvent.Data.pdb
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/dbfEvent.Data.csproj.AssemblyReference.cache
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/dbfEvent.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/dbfEvent.Data.AssemblyInfoInputs.cache
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/dbfEvent.Data.AssemblyInfo.cs
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/dbfEvent.Data.csproj.CoreCompileInputs.cache
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/dbfEvent.Data.dll
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/refint/dbfEvent.Data.dll
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/dbfEvent.Data.pdb
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/dbfEvent.Data.genruntimeconfig.cache
+/Users/a1-03/Projects/dbfEvent/dbfEvent.Data/obj/Debug/net7.0/ref/dbfEvent.Data.dll

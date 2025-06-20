@@ -1,0 +1,69 @@
+﻿@model dbfEvent.Web.Models.ViewModel.TicketPurchaseVM
+
+@{
+    ViewData["Title"] = "Bilet Al";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<style>
+    body {
+        background-image: url('/images/zhifei-zhou-XO4A1pWBEbE-unsplash.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+    }
+
+    .ticket-form {
+        background-color: rgba(255,255,255,0.9);
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        margin: 40px auto;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+</style>
+
+<h2>Bilet Al</h2>
+
+<form asp-action="BiletAl" method="post">
+    <div class="form-group">
+        <label for="EventId">Etkinlik Seçiniz</label>
+        <select asp-for="EventId" asp-items="Model.Events" class="form-control"></select>
+        <span asp-validation-for="EventId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="ParticipantName">Ad Soyad</label>
+        <input asp-for="ParticipantName" class="form-control" />
+        <span asp-validation-for="ParticipantName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Age">Yaş</label>
+        <input asp-for="Age" class="form-control" type="number" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Email">E-posta</label>
+        <input asp-for="Email" class="form-control" type="email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Phone">Telefon</label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="TicketType">Bilet Tipi</label>
+        <select asp-for="TicketType" asp-items="Model.TicketTypes" class="form-control"></select>
+        <span asp-validation-for="TicketType" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Bilet Al</button>
+</form>
+

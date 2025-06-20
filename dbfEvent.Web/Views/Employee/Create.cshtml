@@ -1,0 +1,72 @@
+﻿
+@model dbfEvent.Web.Models.ViewModel.EmployeeCreateVM
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        ViewData["Title"] = "Yeni Görevli Ekle";
+    }
+
+<style>
+    label.form-label,
+    span.text-danger,
+    input.form-control,
+    select.form-select,
+    h2 {
+        color: #af5f77; /* koyu gri renk */
+    }
+
+    /* Buton rengini koru */
+    button.btn-success {
+        /* Burada ek stil istersen ekleyebilirsin, yoksa dokunma */
+    }
+</style>
+
+    <h2>@ViewData["Title"]</h2>
+
+    <form asp-action="Create" method="post">
+        <div class="mb-3">
+            <label class="form-label">Ad Soyad :</label>
+            <input asp-for="EmployeeName" class="form-control" placeholder="Ad Soyad Giriniz" />
+            <span asp-validation-for="EmployeeName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Adres :</label>
+            <input asp-for="Address" class="form-control" placeholder="Adres Giriniz" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Departman Seçimi : </label>
+            <select asp-for="DepartmentId" asp-items="Model.Departments" class="form-select">
+                <option value="">-- Departman Seçiniz --</option>
+            </select>
+            <span asp-validation-for="DepartmentId" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Etkinlik Seçimi : </label>
+            <select asp-for="EventId" asp-items="Model.Events" class="form-select">
+                <option value="">-- Etkinlik Seçiniz --</option>
+            </select>
+            <span asp-validation-for="EventId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Başlangıç Tarih-Saat : </label>
+            <input asp-for="WorkTime" class="form-control" placeholder="Başalama tarih ve saati seçiniz" />
+            <span asp-validation-for="WorkTime" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Deneyim : </label>
+            <input asp-for="Experience" class="form-control" placeholder="Deneyim Giriniz" />
+            <span asp-validation-for="Experience" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label"> Rol :</label>
+            <input asp-for="Role" class="form-control" placeholder="Rol Giriniz" />
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>
+
