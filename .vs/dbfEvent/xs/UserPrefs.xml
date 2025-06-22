@@ -1,29 +1,16 @@
 ﻿<Properties StartupConfiguration="{D87ACB89-21EB-4094-9FF3-D5AFD99F7F30}|https">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="dbfEvent.Web/Views/Ticket/BiletAl.cshtml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="dbfEvent.Web/Views/Employee/Index.cshtml">
     <Files>
-      <File FileName="dbfEvent.Web/Views/Shared/_Layout2.cshtml" />
-      <File FileName="dbfEvent.Web/Controllers/EventController.cs" Line="51" Column="28" />
-      <File FileName="dbfEvent.Web/Controllers/TicketController.cs" Line="132" Column="14" />
-      <File FileName="dbfEvent.Web/Models/ViewModel/TicketPurchaseVM.cs" Line="7" Column="31" />
-      <File FileName="dbfEvent.Web/Views/Ticket/BiletAl.cshtml" Line="40" Column="79" />
-      <File FileName="dbfEvent.Web/Controllers/EmployeeController.cs" Line="93" Column="35" />
-      <File FileName="dbfEvent.Web/Views/Employee/Create.cshtml" Line="4" Column="39" />
-      <File FileName="dbfEvent.Web/Views/Shared/_Layout.cshtml" Line="1" Column="1" />
+      <File FileName="dbfEvent.Web/Views/Ticket/BiletAl.cshtml" Line="11" Column="25" />
+      <File FileName="dbfEvent.Web/Controllers/EmployeeController.cs" Line="37" Column="61" />
+      <File FileName="dbfEvent.Web/Views/Employee/Index.cshtml" Line="9" Column="12" />
+      <File FileName="dbfEvent.Web/Models/ViewModel/EmployeeCreateVM.cs" Line="23" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="dbfEvent" expanded="True">
-            <Node name="dbfEvent.Data" expanded="True">
-              <Node name="Models" expanded="True" />
-            </Node>
-            <Node name="dbfEvent.Web" expanded="True">
+            <Node name="dbfEvent.Web">
               <Node name="Controllers" expanded="True" />
               <Node name="Models" expanded="True">
                 <Node name="ViewModel" expanded="True" />
@@ -31,18 +18,15 @@
               <Node name="Views" expanded="True">
                 <Node name="Employee" expanded="True" />
                 <Node name="Event" expanded="True" />
-                <Node name="Home" expanded="True" />
                 <Node name="Shared" expanded="True" />
                 <Node name="Ticket" expanded="True" />
               </Node>
               <Node name="wwwroot" expanded="True">
                 <Node name="assets" expanded="True">
                   <Node name="img" expanded="True">
-                    <Node name="zhifei-zhou-XO4A1pWBEbE-unsplash.jpg" selected="True" />
+                    <Node name="claire-nakkachi-I9meM8YQ9DM-unsplash.jpg" selected="True" />
                   </Node>
                 </Node>
-                <Node name="css" expanded="True" />
-                <Node name="js" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -51,4 +35,10 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.dbfEvent.Web PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

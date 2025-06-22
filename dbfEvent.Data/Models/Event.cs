@@ -26,4 +26,6 @@ public partial class Event
     public virtual ICollection<Participant> Participants { get; set; } = new List<Participant>();
 
     public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
+
+    
 }

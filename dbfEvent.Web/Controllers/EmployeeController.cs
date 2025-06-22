@@ -24,7 +24,22 @@ namespace dbfEvent.Web.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            return View();
+            var employees = (from emp in _context.Employees
+                             join dept in _context.Departmens on emp.DepartmentId equals dept.DepartmentId
+                             join evt in _context.Events on emp.EventId equals evt.EventId
+                             select new EmployeeCreateVM
+                             {
+                                 EmployeeName = emp.EmployeeName,
+                                 EventName = evt.EventName,
+                                 WorkTime = emp.WorkTime,
+                                 DepartmentName = dept.DepartmentName,
+                                 Role = emp.Role,
+                                 Experience = emp.Experience
+                                 
+                             }).ToList();
+
+            return View(employees);
+
         }
 
         [HttpGet]

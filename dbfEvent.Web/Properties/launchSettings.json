@@ -36,7 +36,7 @@
     "dbfEvent.Web": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:5672;http://localhost:33249",
+      "applicationUrl": "https://localhost:50499;http://localhost:4356",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

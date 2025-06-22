@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("dbfEvent.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ed8d47d7ca5f944d3b65909156f2637515febec")]
 [assembly: System.Reflection.AssemblyProductAttribute("dbfEvent.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("dbfEvent.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

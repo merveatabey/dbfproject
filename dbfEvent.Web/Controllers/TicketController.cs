@@ -29,131 +29,127 @@ namespace dbfEvent.Web.Controllers
 
 
         [HttpGet]
-        public IActionResult BiletAl(int? eventId = null)
+        public IActionResult BiletAl(string eventType = null, string eventName = null)
         {
-            //formda EventId gizli alan olacağından ViewModel'e sadece bunu atıyoruz.
-            var vm = new TicketPurchaseVM();
 
-            vm.Events = _context.Events.Select(e => new SelectListItem
+            var allEvents = _context.Events.ToList();
+
+            var vm = new TicketPurchaseVM
             {
-                Value = e.EventId.ToString(),
-                Text = e.EventName
-            }).ToList();
+                EventType = eventType,
+                EventId = !string.IsNullOrEmpty(eventName) ? allEvents.FirstOrDefault(e => e.EventName == eventName)?.EventId ?? 0 : 0,
 
 
-            //eventId parametresi varsa seçili yap
-            if (eventId.HasValue)
-            {
-                vm.EventId = eventId.Value;
-            }
+                EventTypes = allEvents.Select(e => e.EventType).Distinct().Select(type =>
+                new SelectListItem
+                {
+                    Text = type,
+                    Value = type
+                }
+                ).ToList(),
 
-            //sabit bilet tiplerini ekle
-            vm.TicketTypes = new List<SelectListItem>
-            {
-                new SelectListItem{Value = "Öğrenci" , Text = "Öğrenci"},
-                new SelectListItem{Value = "Yetişkin", Text = "Yetişkin"},
-                new SelectListItem{Value = "Vip", Text = "Vip"}
+
+
+                Events = allEvents.Select(e => new SelectListItem
+                {
+                    Text = e.EventName,
+                    Value = e.EventId.ToString()
+                }).ToList(),
+
+
+                TicketTypes = new List<SelectListItem>
+                {
+                    new SelectListItem { Value = "Öğrenci", Text = "Öğrenci" },
+                    new SelectListItem { Value = "Yetişkin", Text = "Yetişkin" },
+                    new SelectListItem { Value = "Vip", Text = "Vip" }
+                }
             };
-
 
             return View(vm);
         }
 
         [HttpPost]
-        public async Task <IActionResult> BiletAl(TicketPurchaseVM model)
+        public IActionResult BiletAl(TicketPurchaseVM model)
         {
+
             if (ModelState.IsValid)
             {
-                model.Events = _context.Events.Select(e => new SelectListItem
+
+                //Dropdownları tekrar doldur
+
+                var allEvents = _context.Events.ToList();
+
+                model.EventTypes = allEvents.Select(e => e.EventType).Distinct().Select(type => new SelectListItem { Text = type, Value = type, Selected = (type == model.EventType) }).ToList();
+
+
+                //eventtype seçildiyse filtrele
+                if (!string.IsNullOrEmpty(model.EventType))
                 {
-                    Value = e.EventId.ToString(),
-                    Text = e.EventName
-                }).ToList();
+                    model.Events = allEvents.Where(e => e.EventType == model.EventType)
+                                            .Select(e => new SelectListItem
+                                             {
+                                                     Text = e.EventName,
+                                                     Value = e.EventId.ToString()
+                                             }).ToList();
+                }
+                else
+                {
+                    model.Events = new List<SelectListItem>();
+                }
+              
 
                 model.TicketTypes = new List<SelectListItem>
-        {
-            new SelectListItem { Value = "Öğrenci", Text = "Öğrenci" },
-            new SelectListItem { Value = "Yetişkin", Text = "Yetişkin" },
-            new SelectListItem { Value = "Kamu Personel", Text = "Kamu Personel" }
-        };
+                {
+                    new SelectListItem{Text = "Öğrenci", Value = "Öğrenci"},
+                    new SelectListItem{Text = "Yetişkin", Value = "Yetişkin"},
+                    new SelectListItem{Text = "Vip", Value = "Vip"}
+                };
 
                 return View(model);
             }
 
+            //aktif bilet var mı?
+            var ticket = _context.Tickets.FirstOrDefault(t => t.EventId == model.EventId && t.Status.ToLower() == "Aktif");
+            if (ticket == null)
+            {
+                ModelState.AddModelError("", "Biletler Tükenmiştir, İlginiz İçin Teşekkür Ederiz.");
+                return View(model);
+            }
 
-            model.Events = _context.Events
-                       .Select(e => new SelectListItem
-                       {
-                           Value = e.EventId.ToString(),
-                           Text = e.EventName
-                       })
-                       .ToList();
 
-            //katılımcı oluştur
+
+            //katılmcı kayıt
             var participants = new Participant
             {
+
                 ParticipantName = model.ParticipantName,
                 Age = model.Age,
                 Email = model.Email,
                 Phone = model.Phone,
-                Status = "Aktif",
-                EventId = model.EventId
-
+                EventId = model.EventId,
+                Status = "Onaylandı"
             };
 
             _context.Participants.Add(participants);
+            _context.SaveChanges(); // Burada ParticipantId oluşur
+
+            ticket.Status = "Satıldı";
+            ticket.ParticipantId = participants.ParticipantId;
+            _context.Tickets.Update(ticket);
             _context.SaveChanges();
 
 
-            // Boş ve seçilen event, bilet tipi ve aktif olan bileti al (dilersen bilet tipine göre filtre ekleyebilirsin)
-
-            var ticket = _context.Tickets.Where(t => t.EventId == model.EventId && t.ParticipantId == null && t.Status == "Aktif").FirstOrDefault();
-
-            if(ticket == null)
-            {
-                ModelState.AddModelError("","Bilet Kalmamıştır");
+            return RedirectToAction("BiletOnay");
 
 
-                //dropdown'ları tekrar doldur
-                model.Events = _context.Events.Select(e => new SelectListItem
-                {
-                    Value = e.EventId.ToString(),
-                    Text = e.EventName
-                }).ToList();
 
-                model.TicketTypes = new List<SelectListItem>
-        {
-            new SelectListItem { Value = "Öğrenci", Text = "Öğrenci" },
-            new SelectListItem { Value = "Yetişkin", Text = "Yetişkin" },
-            new SelectListItem { Value = "Kamu Personel", Text = "Kamu Personel" }
-        };
-
-                return View(model);
-            }
-       
-
-            //boş bilet varsa bilet deki katılımcı id ye katılmcıdaki id yi ata.
-            ticket.ParticipantId = participants.ParticipantId;
-            ticket.Status = "Rezerve";
-            await _context.SaveChangesAsync();
-
-            return RedirectToAction("Bilet Onay", new { ticketId = ticket.TicketId });
         }
 
-        public IActionResult BiletOnay(int ticketId)
+        public IActionResult BiletOnay()
         {
-            var ticket = _context.Tickets
-                .Include(t => t.Participant)
-                .Include(t => t.Event)
-                .FirstOrDefault(t => t.TicketId == ticketId);
-
-
-            if (ticketId == null)
-                return NotFound();
-
-            return View(ticket);
+            return View();
         }
-      
     }
 }
+
 

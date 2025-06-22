@@ -5,65 +5,122 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@section Styles {
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/assets/img/mj-jo-gqbQyHEEJww-unsplash.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 1;
+            z-index: -1;
+        }
 
-<style>
-    body {
-        background-image: url('/images/zhifei-zhou-XO4A1pWBEbE-unsplash.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        min-height: 100vh;
-    }
+        .ticket-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            padding: 20px;
+        }
 
-    .ticket-form {
-        background-color: rgba(255,255,255,0.9);
-        padding: 20px;
-        border-radius: 8px;
-        max-width: 600px;
-        margin: 40px auto;
-        box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    }
-</style>
+        .ticket-form {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+        }
 
-<h2>Bilet Al</h2>
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
 
-<form asp-action="BiletAl" method="post">
-    <div class="form-group">
-        <label for="EventId">Etkinlik Seçiniz</label>
-        <select asp-for="EventId" asp-items="Model.Events" class="form-control"></select>
-        <span asp-validation-for="EventId" class="text-danger"></span>
+        .form-group label {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-control {
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            width: 100%;
+            font-weight: bold;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+    </style>
+}
+
+<div class="ticket-wrapper">
+        <form asp-action="BiletAl" asp-controller="Ticket" method="post" class="ticket-form">
+            @Html.AntiForgeryToken()
+
+            <h2>Bilet Al</h2>
+
+            <div class="form-group mb-3">
+                <label for="EventType">Etkinlik Türü</label>
+                <select asp-for="EventType" asp-items="Model.EventTypes" class="form-control">
+                    <option value="">-- Etkinlik Türü Seçiniz --</option>
+                </select>
+                <span asp-validation-for="EventType" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="EventId">Etkinlik Adı</label>
+                <select asp-for="EventId" asp-items="Model.Events" class="form-control">
+                    <option value="">-- Etkinlik Seçiniz --</option>
+                </select>
+                <span asp-validation-for="EventId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="ParticipantName">Ad Soyad</label>
+                <input asp-for="ParticipantName" class="form-control" />
+                <span asp-validation-for="ParticipantName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="Age">Yaş</label>
+                <input asp-for="Age" class="form-control" type="number" />
+                <span asp-validation-for="Age" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="Email">E-posta</label>
+                <input asp-for="Email" class="form-control" type="email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="Phone">Telefon</label>
+                <input asp-for="Phone" class="form-control" />
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="TicketType">Bilet Tipi</label>
+                <select asp-for="TicketType" asp-items="Model.TicketTypes" class="form-control">
+                    <option value="">-- Bilet Tipi Seçiniz --</option>
+                </select>
+                <span asp-validation-for="TicketType" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Satın Al</button>
+        </form>
     </div>
-
-    <div class="form-group">
-        <label for="ParticipantName">Ad Soyad</label>
-        <input asp-for="ParticipantName" class="form-control" />
-        <span asp-validation-for="ParticipantName" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label for="Age">Yaş</label>
-        <input asp-for="Age" class="form-control" type="number" />
-        <span asp-validation-for="Age" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label for="Email">E-posta</label>
-        <input asp-for="Email" class="form-control" type="email" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label for="Phone">Telefon</label>
-        <input asp-for="Phone" class="form-control" />
-        <span asp-validation-for="Phone" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label for="TicketType">Bilet Tipi</label>
-        <select asp-for="TicketType" asp-items="Model.TicketTypes" class="form-control"></select>
-        <span asp-validation-for="TicketType" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Bilet Al</button>
-</form>
 

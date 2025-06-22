@@ -1,67 +1,68 @@
 ﻿
-
 @model IEnumerable<dbfEvent.Data.Models.Event>
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <th>Etkinlik Adı</th>
-            <th>Açıklama</th>
-            <th>Etkinlik Türü</th>
-            <th>Başlangıç Tarihi</th>
-            <th>Bitiş Tarihi</th>
-            <th>Konumu</th>
-            <th>Katılımcı Sınırı</th>
-            <th>İşlemler</th>
-        </tr>
-    </thead>
-    <tbody>
-        @{
-            var colors = new[] { "table-primary", "table-success", "table-warning" };
-            int colorIndex = 0;
+@section Styles {
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/assets/img/zhifei-zhou-XO4A1pWBEbE-unsplash.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 0.25;
+            z-index: -1;
         }
+    </style>
+}
+<div class="container mt-5 d-flex flex-column align-items-center">
+    <h1 class="mb-4 text-black">Film Festivalleri</h1>
 
+    <div class="row justify-content-center g-4" style="max-width: 900px; width: 100%;">
         @foreach (var item in Model)
         {
-            // Satır rengini sırayla seç
-            string rowClass = colors[colorIndex % colors.Length];
-            colorIndex++;
+            <div class="col-12 col-md-6 d-flex justify-content-center">
+                <div class="card shadow-lg text-black" style="width: 380px; border-radius: 15px; background: rgba(255, 255, 255, 0.15); backdrop-filter: saturate(180%) blur(12px);">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-center mb-3">@item.EventName</h5>
+                        <p class="card-text mb-4" style="flex-grow:1;">@item.Description</p>
 
-            <tr class="@rowClass">
-                <td>@item.EventName</td>
-                <td>@item.Description</td>
-                <td>@item.EventType</td>
-                <td>@item.StartDate</td>
-                <td>@item.FinishDate</td>
-                <td>@item.Location</td>
-                <td>@item.ParticipantsLimit</td>
-                <td>
-                    <a asp-action="BiletAl" asp-controller="Bilet" class="btn btn-outline-warning btn-sm" onclick="biletAL(this)">Bilet Al</a>
-                </td>
-            </tr>
+                        <div class="d-flex justify-content-between mb-3 small text-dark">
+                            <div>
+                                <strong>Başlangıç:</strong><br />
+                                @item.StartDate.ToString()
+                            </div>
+                            <div>
+                                <strong>Bitiş:</strong><br />
+                                @item.FinishDate.ToString()
+                            </div>
+                        </div>
+
+                        <div class="mb-2 small" style="color:#ff4d4d;">
+                            <strong>Lokasyon:</strong> @item.Location
+                        </div>
+                        <div class="mb-3 small" style="color:#ff4d4d; font-weight: 600;">
+                            <strong>Katılımcı Sınırı:</strong> @item.ParticipantsLimit
+                        </div>
+
+                        <a asp-action="BiletAl" asp-controller="Ticket" asp-route-eventType="@item.EventType" asp-route-eventName="@item.EventName" class="btn btn-danger mt-auto" style="width: 100%;" onclick="biletAL(this)">
+                            🎟️ Bilet Al
+                        </a>
+                    </div>
+                </div>
+            </div>
         }
+    </div>
+</div>
 
-    </tbody>
-</table>
 
 <script>function biletAL(element) {
-
-        alert("Bilet Al sayfasına yönlendiriliyorsunuz!")
-
-        //tüm satırlardaki seçimi kaldır (isteğe bağlı)
-        const rows = document.querySelectorAll('#datatablesSimple tbody tr');
-        rows.forEach(row => row.style.backgroundColor = '');
-
-        //tıklanana satırı bul
-        const tr = element.closest('tr');
-        //satırın arka plan rengini değiştir
-        tr.style.backgroundColor = '#fff3cd';
-
+        alert("Bilet Al sayfasına yönlendiriliyorsunuz!");
     }</script>
 

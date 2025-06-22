@@ -18,11 +18,18 @@ namespace dbfEvent.Web.Models.ViewModel
 
         // Seçilen departmanın ID'si
         public int? DepartmentId { get; set; }
+
         public int? EventId { get; set; }
+
+        public string? EventName { get; set; }
+        public string? DepartmentName { get; set; }
 
         // Dropdown listesini tutacak property
         public IEnumerable<SelectListItem>? Departments { get; set; }
         public IEnumerable<SelectListItem>? Events { get; set; }
+
+
+
     }
 }
 

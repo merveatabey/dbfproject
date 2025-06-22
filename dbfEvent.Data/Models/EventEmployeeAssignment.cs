@@ -10,7 +10,7 @@ public partial class EventEmployeeAssignment
     public int? EventId { get; set; }
 
     public int? EmployeeId { get; set; }
-
+        
     public string? TaskDescription { get; set; }
 
     public DateTime? AssignmentDate { get; set; }

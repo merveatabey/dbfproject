@@ -1,0 +1,76 @@
+﻿@model dbfEvent.Web.Models.ViewModel.TicketPurchaseVM
+
+@{
+    ViewData["Title"] = "Bilet Al";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <style>
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('/assets/img/mj-jo-gqbQyHEEJww-unsplash.jpg') no-repeat center center fixed;
+            background-size: cover;
+            opacity: 1;
+            z-index: -1;
+        }
+
+        .ticket-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+            padding: 20px;
+        }
+
+        .ticket-form {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-group label {
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-control {
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            width: 100%;
+            font-weight: bold;
+        }
+
+            .btn-primary:hover {
+                background-color: #0056b3;
+            }
+    </style>
+}
+
+<div class="ticket-wrapper">
+    <form asp-action="BiletAl" asp-controller="Ticket" method="post" class="ticket-form">
+
+        <h2>Biletiniz Onaylanmıştır, mail adresinize gönderilecektir. Lütfen maillerinizi kontrol ediniz.. </h2>
+
+    </form>
+</div>
+

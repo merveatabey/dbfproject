@@ -27,28 +27,33 @@ namespace dbfEvent.Web.Controllers
 
         public IActionResult Sanat()
         {
-            var sanatFests = _context.Events.Where(e => e.EventType.ToLower() == "sanat sergisi").ToList();
-            return View(sanatFests);
+            var sanat = _context.Events.Where(e => e.EventType.ToLower() == "sanat").ToList();
+            return View(sanat);
         }
         public IActionResult Film()
         {
-            var filmFests = _context.Events.Where(e => e.EventType.ToLower() == "film festivali").ToList();
-            return View(filmFests);
+            var film = _context.Events.Where(e => e.EventType.ToLower() == "film").ToList();
+            return View(film);
         }
         public IActionResult Müzik()
         {
-            var musicFests = _context.Events.Where(e => e.EventType.ToLower() == "müzik festivali").ToList();
-            return View(musicFests);
+            var music = _context.Events.Where(e => e.EventType.ToLower() == "Müzik").ToList();
+            return View(music);
         }
         public IActionResult Kitap()
         {
-            var kitapFests = _context.Events.Where(e => e.EventType.ToLower() == "kitap fuarı").ToList();
-            return View(kitapFests);
+            var kitap = _context.Events.Where(e => e.EventType.ToLower() == "kitap").ToList();
+            return View(kitap);
         }
         public IActionResult Teknoloji()
         {
-            var teknoFest = _context.Events.Where(e => e.EventType.ToLower() == "teknoloji zirvesi").ToList();
-            return View(teknoFest);
+            var teknoloji = _context.Events.Where(e => e.EventType.ToLower() == "teknoloji").ToList();
+            return View(teknoloji);
+        }
+        public IActionResult Diger()
+        {
+            var diger = _context.Events.Where(d => d.EventType.ToLower() == "Diğer").ToList();
+            return View(diger);
         }
 
     }   

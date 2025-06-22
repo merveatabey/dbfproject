@@ -9,79 +9,83 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = dbfEvent.Web
 build_property.RootNamespace = dbfEvent.Web
-build_property.ProjectDir = /Users/a1-03/Projects/dbfEvent/dbfEvent.Web/
+build_property.ProjectDir = /Users/mervesefil/dbfproject/dbfEvent.Web/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = /Users/a1-03/Projects/dbfEvent/dbfEvent.Web
+build_property.MSBuildProjectDirectory = /Users/mervesefil/dbfproject/dbfEvent.Web
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Employee/Create.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Employee/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Employee/Index.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Employee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wbG95ZWUvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Event/Film.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Event/Diger.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvRGlnZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Event/Film.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvRmlsbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Event/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Event/Kitap.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Event/Kitap.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvS2l0YXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Event/Müzik.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Event/Müzik.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvTcO8emlrLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Event/Sanat.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Event/Sanat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvU2FuYXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Event/Teknoloji.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Event/Teknoloji.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRXZlbnQvVGVrbm9sb2ppLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Home/Index.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Home/Privacy.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Shared/Error.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Shared/_Layout2.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Shared/_Layout2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Ticket/BiletAl.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Ticket/BiletAl.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0L0JpbGV0QWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/_ViewImports.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Ticket/BiletOnay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0L0JpbGV0T25heS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/_ViewStart.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/a1-03/Projects/dbfEvent/dbfEvent.Web/Views/Shared/_Layout.cshtml]
+[/Users/mervesefil/dbfproject/dbfEvent.Web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-utwb4w2bzm

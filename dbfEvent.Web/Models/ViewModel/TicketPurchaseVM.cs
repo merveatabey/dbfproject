@@ -6,7 +6,15 @@ namespace dbfEvent.Web.Models.ViewModel
 {
 	public class TicketPurchaseVM
 	{
-		public int EventId { get; set; }
+
+        public int EventId { get; set; }
+        public string EventType { get; set; }
+
+        // Dropdown listeleri View tarafında kullanmak için
+        public List<SelectListItem> EventTypes { get; set; }
+        public List<SelectListItem> Events { get; set; }
+
+
 		[Required(ErrorMessage = "Ad Soyad Zorunludur.")]
 		public string? ParticipantName { get; set; }
 
@@ -21,11 +29,8 @@ namespace dbfEvent.Web.Models.ViewModel
         [Phone(ErrorMessage = "Geçerli bir telefon numarası giriniz")]
         public string? Phone { get; set; }
 
-        [Required]
-        public string TicketType { get; set; }  // Bilet tipi (öğrenci, yetişkin vb.)
-
-        // Dropdown listeleri View tarafında kullanmak için
-        public List<SelectListItem> Events { get; set; }
+        [Required(ErrorMessage = "Bilet tipi seçiniz.")]
+        public string TicketType { get; set; }
 
         public List<SelectListItem> TicketTypes { get; set; }
 
