@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lWzqgvXLyOI=",
+  "dgSpecHash": "vqq3CP6gynI=",
   "success": true,
-  "projectFilePath": "/Users/mervesefil/dbfproject/dbfEvent.Web/dbfEvent.Web.csproj",
+  "projectFilePath": "/Users/mervesefil/Projects/dbfproject/dbfEvent.Web/dbfEvent.Web.csproj",
   "expectedPackageFiles": [
     "/Users/mervesefil/.nuget/packages/azure.core/1.35.0/azure.core.1.35.0.nupkg.sha512",
     "/Users/mervesefil/.nuget/packages/azure.identity/1.10.3/azure.identity.1.10.3.nupkg.sha512",

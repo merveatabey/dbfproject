@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mervesefil/dbfproject/dbfEvent.Data/dbfEvent.Data.csproj": {}
+    "/Users/mervesefil/Projects/dbfproject/dbfEvent.Data/dbfEvent.Data.csproj": {}
   },
   "projects": {
-    "/Users/mervesefil/dbfproject/dbfEvent.Data/dbfEvent.Data.csproj": {
+    "/Users/mervesefil/Projects/dbfproject/dbfEvent.Data/dbfEvent.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mervesefil/dbfproject/dbfEvent.Data/dbfEvent.Data.csproj",
+        "projectUniqueName": "/Users/mervesefil/Projects/dbfproject/dbfEvent.Data/dbfEvent.Data.csproj",
         "projectName": "dbfEvent.Data",
-        "projectPath": "/Users/mervesefil/dbfproject/dbfEvent.Data/dbfEvent.Data.csproj",
+        "projectPath": "/Users/mervesefil/Projects/dbfproject/dbfEvent.Data/dbfEvent.Data.csproj",
         "packagesPath": "/Users/mervesefil/.nuget/packages/",
-        "outputPath": "/Users/mervesefil/dbfproject/dbfEvent.Data/obj/",
+        "outputPath": "/Users/mervesefil/Projects/dbfproject/dbfEvent.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/mervesefil/.nuget/NuGet/NuGet.Config"

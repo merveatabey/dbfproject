@@ -25,7 +25,7 @@ namespace dbfEvent.Web.Controllers
         public IActionResult Index()
         {
             var employees = (from emp in _context.Employees
-                             join dept in _context.Departmens on emp.DepartmentId equals dept.DepartmentId
+                             join dept in _context.Departments on emp.DepartmentId equals dept.DepartmentId
                              join evt in _context.Events on emp.EventId equals evt.EventId
                              select new EmployeeCreateVM
                              {
@@ -45,7 +45,7 @@ namespace dbfEvent.Web.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            var departments = _context.Departmens.Select(d => new SelectListItem
+            var departments = _context.Departments.Select(d => new SelectListItem
             {
                 Value = d.DepartmentId.ToString(),
                 Text = d.DepartmentName
@@ -91,7 +91,7 @@ namespace dbfEvent.Web.Controllers
                 // Eğer ModelState bu noktada hatalıysa dropdownları tekrar doldur ve View'e dön
                 if (!ModelState.IsValid)
                 {
-                    vm.Departments = _context.Departmens
+                    vm.Departments = _context.Departments
                         .Select(d => new SelectListItem
                         {
                             Value = d.DepartmentId.ToString(),
@@ -128,7 +128,7 @@ namespace dbfEvent.Web.Controllers
             }
 
             // ModelState geçerli değilse dropdownları tekrar doldur
-            vm.Departments = _context.Departmens
+            vm.Departments = _context.Departments
                 .Select(d => new SelectListItem
                 {
                     Value = d.DepartmentId.ToString(),

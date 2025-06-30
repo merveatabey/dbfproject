@@ -15,7 +15,7 @@ public partial class EventManagementDbContext : DbContext
     {
     }
 
-    public virtual DbSet<Departmen> Departmens { get; set; }
+    public virtual DbSet<Departmen> Departments { get; set; }
 
     public virtual DbSet<Employee> Employees { get; set; }
 
