@@ -47,11 +47,11 @@ Bu proje, **DB First** yöntemi kullanılarak geliştirilmiş, çeşitli kategor
 
 ##  Proje Yapısı
 
-/Controllers # İş mantığı ve API endpointleri
-/Models # DB First ile otomatik oluşturulan modeller
-/Views # Razor veya ilgili view dosyaları
-/Scripts # JavaScript dosyaları
-/wwwroot # Statik dosyalar
+- /Controllers # İş mantığı ve API endpointleri
+- /Models # DB First ile otomatik oluşturulan modeller
+- /Views # Razor veya ilgili view dosyaları
+- /Scripts # JavaScript dosyaları
+- /wwwroot # Statik dosyalar
 ---
 
 ##  Kurulum & Çalıştırma
